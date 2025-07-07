@@ -2,9 +2,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Cosmic](https://img.shields.io/badge/Powered%20by-Cosmic-blue)](https://www.cosmicjs.com/)
-[![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen)](https://github.com/your-username/your-repo/actions)
-[![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen)](https://github.com/your-username/your-repo/actions)
-[![Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen)](https://github.com/your-username/your-repo/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/patgpt/cosmic-mcp/ci.yml?branch=main)](https://github.com/patgpt/cosmic-mcp/actions)
+[![Tests](https://img.shields.io/github/actions/workflow/status/patgpt/cosmic-mcp/ci.yml?branch=main&label=tests)](https://github.com/patgpt/cosmic-mcp/actions)
+[![Coverage](https://img.shields.io/codecov/c/github/patgpt/cosmic-mcp)](https://codecov.io/gh/patgpt/cosmic-mcp)
+[![npm version](https://img.shields.io/npm/v/cosmic-mcp)](https://www.npmjs.com/package/cosmic-mcp)
+[![npm downloads](https://img.shields.io/npm/dm/cosmic-mcp)](https://www.npmjs.com/package/cosmic-mcp)
 
 A robust, production-ready [Model Context Protocol (MCP)](https://modelcontextprotocol.dev) server for interacting with the [Cosmic](https://www.cosmicjs.com/) headless CMS. This server provides a comprehensive set of tools for creating, reading, updating, and deleting objects, types, and media in your Cosmic bucket.
 
@@ -31,8 +33,8 @@ A robust, production-ready [Model Context Protocol (MCP)](https://modelcontextpr
 Clone the repository and install the dependencies:
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/patgpt/cosmic-mcp.git
+cd cosmic-mcp
 bun install
 ```
 

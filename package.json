@@ -1,7 +1,7 @@
 {
   "name": "cosmic-mcp",
   "version": "1.0.0",
-  "description": "A Model Context Protocol (MCP) server for the Cosmic headless CMS.",
+  "description": "A Model Context Protocol (MCP) server for the Cosmic.js headless CMS.",
   "type": "module",
   "main": "dist/server.js",
   "bin": {
@@ -12,12 +12,16 @@
     "start": "bun run src/server.ts",
     "dev": "bun run --watch src/server.ts",
     "test": "bun test",
+    "test:coverage": "bun test --coverage",
+    "test:integration": "bun test tests/integration/",
+    "type-check": "tsc --noEmit",
     "clean": "rm -rf dist",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "mcp",
@@ -27,7 +31,7 @@
     "cms",
     "headless"
   ],
-  "author": "Your Name <you@example.com>",
+  "author": "patgpt",
   "license": "MIT",
   "dependencies": {
     "@cosmicjs/sdk": "^1.5.5",
@@ -65,10 +69,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/your-repo.git"
+    "url": "https://github.com/patgpt/cosmic-mcp.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/your-repo/issues"
+    "url": "https://github.com/patgpt/cosmic-mcp/issues"
   },
-  "homepage": "https://github.com/your-username/your-repo#readme"
+  "homepage": "https://github.com/patgpt/cosmic-mcp#readme"
 }

@@ -1,28 +1,44 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Cosmic MCP",
-  description: "A VitePress Site",
+  title: 'Cosmic MCP Server',
+  description:
+    'A robust, production-ready Model Context Protocol (MCP) server for interacting with the Cosmic headless CMS',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Getting Started', link: '/getting-started' },
+      { text: 'Configuration', link: '/configuration' },
+      { text: 'Tools', link: '/tools/' },
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Guide',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
+          { text: 'Getting Started', link: '/getting-started' },
+          { text: 'Configuration', link: '/configuration' },
+          { text: 'MCP Client Setup', link: '/mcp-setup' },
+          { text: 'AI Assistant Prompts', link: '/ai-prompts' },
+          { text: 'Secrets & Workflows', link: '/secrets-and-workflow' },
+        ],
+      },
+      {
+        text: 'Tools API',
+        items: [
+          { text: 'Overview', link: '/tools/' },
+          { text: 'Complete Reference', link: '/tools-reference' },
+          { text: 'Objects', link: '/tools/objects' },
+          { text: 'Media', link: '/tools/media' },
+          { text: 'Types', link: '/tools/types' },
+        ],
+      },
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
-  }
-})
+      { icon: 'github', link: 'https://github.com/patgpt/cosmic-mcp' },
+    ],
+  },
+});

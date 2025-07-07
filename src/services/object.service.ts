@@ -1,4 +1,13 @@
-// Object Service - Business logic for object operations
+/**
+ * @fileoverview Object Service - Business logic for object operations
+ *
+ * This service layer handles the business logic for Cosmic object operations.
+ * It orchestrates between repositories and implements business rules, validation,
+ * and complex operations that involve multiple data sources.
+ *
+ * @author Cosmic MCP Team
+ * @version 2.0.0
+ */
 
 import { ValidationError } from "../errors/base.error";
 import type {
@@ -15,9 +24,43 @@ import type { CosmicObject, CosmicResponse } from "../types/cosmic.types";
 import logger from "../utils/logger";
 import { defaultRateLimiter } from "../utils/rate-limiter";
 
+/**
+ * Service class for managing Cosmic objects with business logic
+ * 
+ * @description Provides high-level operations for Cosmic objects including
+ * validation, business rules, and coordination between repositories. This service
+ * implements the business logic layer and ensures data integrity.
+ * 
+ * @example
+ * ```typescript
+ * const objectService = new ObjectService(objectRepository, typeRepository);
+ * 
+ * // Create a new blog post
+ * const post = await objectService.createObject({
+ *   title: 'My New Blog Post',
+ *   typeSlug: 'posts',
+ *   content: 'This is my blog post content...',
+ *   status: 'published'
+ * });
+ * 
+ * // Search for posts
+ * const results = await objectService.searchObjects({
+ *   query: 'javascript tutorial',
+ *   typeSlug: 'posts',
+ *   limit: 10
+ * });
+ * ```
+ */
 export class ObjectService {
+  /** Logger instance with service context */
   private logger = logger.withContext({ service: "ObjectService" });
 
+  /**
+   * Creates a new ObjectService instance
+   * 
+   * @param objectRepository - Repository for object data operations
+   * @param typeRepository - Repository for object type operations
+   */
   constructor(
     private objectRepository: ObjectRepository,
     private typeRepository: TypeRepository

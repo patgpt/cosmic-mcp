@@ -1,4 +1,13 @@
-// Object Repository - Handles all CRUD operations for Cosmic objects
+/**
+ * @fileoverview Object Repository - Handles all CRUD operations for Cosmic objects
+ *
+ * This repository provides methods for creating, reading, updating, and deleting
+ * Cosmic objects. It handles the complex logic of working with the Cosmic API
+ * and provides a clean interface for object operations.
+ *
+ * @author Cosmic MCP Team
+ * @version 2.0.0
+ */
 
 import { CosmicObjectNotFoundError } from '../errors/cosmic.error';
 import type {
@@ -58,7 +67,54 @@ export interface SearchObjectsQuery extends Record<string, unknown> {
   locale?: string;
 }
 
+/**
+ * Repository class for managing Cosmic objects
+ * 
+ * @description Provides CRUD operations for Cosmic objects including listing,
+ * finding, creating, updating, deleting, and searching objects. Handles all
+ * the complexity of working with the Cosmic API and provides proper error handling.
+ * 
+ * @example
+ * ```typescript
+ * const objectRepo = new ObjectRepository(cosmicClient);
+ * 
+ * // List objects
+ * const objects = await objectRepo.findMany({
+ *   typeSlug: 'posts',
+ *   status: 'published',
+ *   limit: 10,
+ *   skip: 0,
+ *   sort: '-created_at'
+ * });
+ * 
+ * // Create an object
+ * const newPost = await objectRepo.create({
+ *   title: 'My New Post',
+ *   typeSlug: 'posts',
+ *   content: 'This is the post content',
+ *   status: 'published'
+ * });
+ * ```
+ */
 export class ObjectRepository extends BaseRepository {
+  /**
+   * Retrieves multiple objects from Cosmic with filtering and pagination
+   * 
+   * @param query - Query parameters for filtering and pagination
+   * @returns Promise resolving to a paginated list of objects
+   * 
+   * @example
+   * ```typescript
+   * const result = await objectRepo.findMany({
+   *   typeSlug: 'posts',
+   *   status: 'published',
+   *   limit: 10,
+   *   skip: 0,
+   *   sort: '-created_at'
+   * });
+   * console.log(`Found ${result.objects?.length} objects`);
+   * ```
+   */
   async findMany(
     query: ListObjectsQuery,
   ): Promise<CosmicResponse<CosmicObject>> {

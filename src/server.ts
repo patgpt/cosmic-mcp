@@ -1,6 +1,15 @@
 #!/usr/bin/env node
 
-// Main MCP Server - Migrated to use official MCP TypeScript SDK
+/**
+ * @fileoverview Main MCP Server - Migrated to use official MCP TypeScript SDK
+ *
+ * This is the main entry point for the Cosmic MCP Server. It sets up the MCP server
+ * with all the necessary tools for interacting with Cosmic CMS, handles dependency
+ * injection, and provides a clean interface for AI assistants to manage content.
+ *
+ * @author Cosmic MCP Team
+ * @version 2.0.0
+ */
 
 import { createBucketClient } from '@cosmicjs/sdk';
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
@@ -44,9 +53,23 @@ import { UnknownToolError } from './errors/validation.error.js';
 import logger from './utils/logger.js';
 import { defaultRateLimiter } from './utils/rate-limiter.js';
 
-// Server Configuration and Dependency Injection
+/**
+ * Main MCP Server class that handles all Cosmic CMS operations
+ * 
+ * @description This class sets up and manages the MCP server, handling tool registration,
+ * request routing, dependency injection, and error handling. It provides a complete
+ * interface for AI assistants to interact with Cosmic CMS.
+ * 
+ * @example
+ * ```typescript
+ * const server = new CosmicMCPServer();
+ * await server.start();
+ * ```
+ */
 class CosmicMCPServer {
+  /** Logger instance for server operations */
   private logger = logger;
+  /** MCP server instance */
   private server: Server;
 
   // Dependencies

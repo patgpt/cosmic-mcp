@@ -1,4 +1,12 @@
-// Winston Logger Utility
+/**
+ * @fileoverview Winston Logger Utility
+ *
+ * This module provides a structured logging system with contextual information
+ * for debugging and monitoring the Cosmic MCP server operations.
+ *
+ * @author Cosmic MCP Team
+ * @version 2.0.0
+ */
 
 import winston from "winston";
 import type { LoggerConfig } from "../types/config.types";

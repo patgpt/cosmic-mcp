@@ -1,5 +1,18 @@
-// Cosmic JS SDK Response Types
+/**
+ * @fileoverview Cosmic JS SDK Response Types
+ *
+ * This module contains all TypeScript type definitions for interacting with the Cosmic CMS API.
+ * It provides complete type safety for all API operations including objects, media, and metadata.
+ *
+ * @author Cosmic MCP Team
+ * @version 2.0.0
+ */
 
+/**
+ * Configuration interface for Cosmic CMS client
+ * 
+ * @description Defines the required configuration options for connecting to a Cosmic bucket
+ */
 export interface CosmicConfig {
   bucketSlug: string;
   readKey: string;

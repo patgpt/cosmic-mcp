@@ -5,6 +5,7 @@ export default defineConfig({
   title: 'Cosmic MCP Server',
   description:
     'A robust, production-ready Model Context Protocol (MCP) server for interacting with the Cosmic headless CMS',
+  base: '/cosmic-mcp/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

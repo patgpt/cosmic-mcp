@@ -92,10 +92,19 @@ jobs:
 
           # Create new changelog entry
           DATE=$(date +%Y-%m-%d)
-          NEW_ENTRY="## [${NEW_VERSION}] - ${DATE}\n\n${COMMITS}\n\n"
+
+          # Create temporary file with new entry
+          echo "## [${NEW_VERSION}] - ${DATE}" > temp_changelog.md
+          echo "" >> temp_changelog.md
+          echo "${COMMITS}" >> temp_changelog.md
+          echo "" >> temp_changelog.md
 
           # Insert new entry after the header
-          sed -i "/^# Changelog/a\\\\n${NEW_ENTRY}" CHANGELOG.md
+          head -n 4 CHANGELOG.md > new_changelog.md
+          cat temp_changelog.md >> new_changelog.md
+          tail -n +5 CHANGELOG.md >> new_changelog.md
+          mv new_changelog.md CHANGELOG.md
+          rm temp_changelog.md
 
       - name: Commit version bump
         if: steps.version.outputs.bump != 'none'
@@ -141,7 +150,8 @@ jobs:
         if: steps.version.outputs.bump != 'none'
         run: |
           # Update README badges with new version
-          sed -i "s/cosmic-mcp@[0-9]\+\.[0-9]\+\.[0-9]\+/cosmic-mcp@$NEW_VERSION/g" README.md
+          sed -i.bak "s/cosmic-mcp@[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*/cosmic-mcp@$NEW_VERSION/g" README.md
+          rm README.md.bak
 
           # Commit documentation updates
           git add README.md

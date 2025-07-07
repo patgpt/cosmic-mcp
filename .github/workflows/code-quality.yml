@@ -29,7 +29,7 @@ jobs:
         run: bun audit
 
       - name: Run dependency vulnerability scan
-        uses: actions/dependency-review-action@v3
+        uses: actions/dependency-review-action@v4
         if: github.event_name == 'pull_request'
 
   code-analysis:

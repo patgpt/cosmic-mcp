@@ -1,0 +1,74 @@
+{
+  "name": "cosmic-mcp",
+  "version": "1.0.0",
+  "description": "A Model Context Protocol (MCP) server for the Cosmic headless CMS.",
+  "type": "module",
+  "main": "dist/server.js",
+  "bin": {
+    "cosmic-mcp": "dist/server.js"
+  },
+  "scripts": {
+    "build": "bun build src/server.ts --outdir dist --target node",
+    "start": "bun run src/server.ts",
+    "dev": "bun run --watch src/server.ts",
+    "test": "bun test",
+    "clean": "rm -rf dist",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [
+    "mcp",
+    "cosmic",
+    "cursor",
+    "ai",
+    "cms",
+    "headless"
+  ],
+  "author": "Your Name <you@example.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@cosmicjs/sdk": "^1.5.5",
+    "@modelcontextprotocol/sdk": "1.15.0",
+    "dotenv": "17.0.1",
+    "eslint": "9.30.1",
+    "winston": "^3.17.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.30.1",
+    "@types/bun": "1.2.18",
+    "@types/node": "^20.10.0",
+    "@types/winston": "2.4.4",
+    "@typescript-eslint/eslint-plugin": "8.35.1",
+    "@typescript-eslint/parser": "8.35.1",
+    "eslint-config-prettier": "10.1.5",
+    "eslint-plugin-prettier": "5.5.1",
+    "globals": "16.3.0",
+    "prettier": "3.6.2",
+    "typescript": "^5.3.2",
+    "typescript-eslint": "8.35.1",
+    "vitepress": "1.6.3"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "bun": ">=1.1.0"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE",
+    ".env.example"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/your-repo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/your-repo/issues"
+  },
+  "homepage": "https://github.com/your-username/your-repo#readme"
+}

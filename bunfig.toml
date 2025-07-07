@@ -1,0 +1,60 @@
+# Bun Configuration File
+
+[install]
+# Install dependencies with exact versions
+exact = true
+
+# Don't install optional dependencies
+optional = true
+
+# Install peer dependencies
+peer = true
+
+# Production install optimizations
+production = false
+
+# Registry configuration
+registry = "https://registry.npmjs.org/"
+
+# Cache configuration
+cache = "~/.bun/install/cache"
+
+[test]
+# Test configuration
+preload = ["./tests/setup.ts"]
+
+# Coverage configuration
+coverage = true
+
+# Timeout settings
+timeout = 30000
+
+[run]
+# Environment variables
+env = ".env"
+
+# Enable source maps for better debugging
+sourcemap = "inline"
+
+# Hot reload for development
+hot = true
+
+# Shell to use for scripts
+shell = "system"
+
+[build]
+# Build configuration
+outdir = "./dist"
+target = "node"
+format = "cjs"
+splitting = false
+minify = false
+sourcemap = true
+external = ["@cosmicjs/sdk"]
+
+[dev]
+# Development server configuration
+port = 3000
+hostname = "localhost"
+hot = true
+watch = true 

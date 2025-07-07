@@ -50,24 +50,13 @@ jobs:
         run: bun install
 
       - name: Run ESLint
-        run: bun run lint --format json --output-file eslint-results.json || true
+        run: bun run lint
 
       - name: Run TypeScript compiler
         run: bun run type-check
 
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: >
-            -Dsonar.projectKey=patgpt_cosmic-mcp
-            -Dsonar.organization=patgpt
-            -Dsonar.sources=src
-            -Dsonar.tests=tests
-            -Dsonar.eslint.reportPaths=eslint-results.json
-            -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info
+      - name: Generate test coverage
+        run: bun test --coverage
 
   license-check:
     runs-on: ubuntu-latest

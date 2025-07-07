@@ -133,7 +133,7 @@ The server validates configuration on startup:
 
 For enterprise or self-hosted Cosmic instances:
 
-```env
+```bash
 COSMIC_API_URL=https://your-custom-api.com
 ```
 
@@ -141,7 +141,7 @@ COSMIC_API_URL=https://your-custom-api.com
 
 Adjust rate limits based on your usage:
 
-```env
+```bash
 RATE_LIMIT_REQUESTS=500
 RATE_LIMIT_WINDOW=60000
 ```
@@ -150,14 +150,14 @@ RATE_LIMIT_WINDOW=60000
 
 #### Development
 
-```env
+```bash
 LOG_LEVEL=debug
 RATE_LIMIT_REQUESTS=1000
 ```
 
 #### Production
 
-```env
+```bash
 LOG_LEVEL=warn
 RATE_LIMIT_REQUESTS=100
 ```

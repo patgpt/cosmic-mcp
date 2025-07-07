@@ -33,7 +33,7 @@ cosmic-mcp
 
 Create a `.env` file in your project directory with your Cosmic credentials:
 
-```env
+```bash
 COSMIC_BUCKET_SLUG=your-bucket-slug
 COSMIC_READ_KEY=your-read-key
 COSMIC_WRITE_KEY=your-write-key

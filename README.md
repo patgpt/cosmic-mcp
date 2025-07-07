@@ -177,7 +177,36 @@ This MCP server exposes the following tools. All tools are designed to be called
 | `list_media`        | List all media files, with pagination.                                 |
 | `delete_media`      | Delete a media file by its ID.                                         |
 
-For detailed input schemas for each tool, please refer to the `src/manifest.ts` file or the VitePress documentation.
+For detailed input schemas for each tool, please refer to the [📚 Documentation](https://patgpt.github.io/cosmic-mcp/) or the `src/manifest.ts` file.
+
+---
+
+## 📚 Documentation
+
+Comprehensive documentation is available at **[https://patgpt.github.io/cosmic-mcp/](https://patgpt.github.io/cosmic-mcp/)**
+
+The documentation includes:
+
+- **[Getting Started Guide](https://patgpt.github.io/cosmic-mcp/getting-started.html)** - Complete setup and installation instructions
+- **[Configuration Reference](https://patgpt.github.io/cosmic-mcp/configuration.html)** - All configuration options and environment variables
+- **[Tools API Documentation](https://patgpt.github.io/cosmic-mcp/tools/)** - Detailed reference for all available tools
+- **[AI Assistant Prompts](https://patgpt.github.io/cosmic-mcp/ai-prompts.html)** - Example prompts for effective AI interaction
+- **[MCP Client Setup](https://patgpt.github.io/cosmic-mcp/mcp-setup.html)** - Configuration for VS Code, Cursor, and other MCP clients
+
+### Local Documentation
+
+You can also run the documentation locally:
+
+```bash
+# Install dependencies
+npm install
+
+# Start the documentation server
+npm run docs:dev
+
+# Build the documentation
+npm run docs:build
+```
 
 ---
 

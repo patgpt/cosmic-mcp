@@ -183,9 +183,9 @@ Check the following locations for logs:
 
 Once you have the MCP server configured:
 
-1. [Explore the available tools](/tools/)
-2. [Learn about configuration options](/configuration)
-3. [Check out the API documentation](/tools/objects)
+1. [Explore the available tools](./tools/)
+2. [Learn about configuration options](./configuration.md)
+3. [Check out the API documentation](./tools/objects.md)
 
 ## Support
 

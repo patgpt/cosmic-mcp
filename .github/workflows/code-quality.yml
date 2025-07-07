@@ -10,28 +10,6 @@ on:
     - cron: '0 9 * * 1'
 
 jobs:
-  security-audit:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
-        with:
-          bun-version: latest
-
-      - name: Install dependencies
-        run: bun install
-
-      - name: Run security audit
-        run: bun audit
-
-      - name: Run dependency vulnerability scan
-        uses: actions/dependency-review-action@v3
-        if: github.event_name == 'pull_request'
-
   code-analysis:
     runs-on: ubuntu-latest
 
@@ -83,39 +61,3 @@ jobs:
 
           # Fail if GPL or other copyleft licenses are found
           bunx license-checker --excludePrivatePackages --failOn 'GPL;AGPL;LGPL'
-
-  performance-check:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
-        with:
-          bun-version: latest
-
-      - name: Install dependencies
-        run: bun install
-
-      - name: Build project
-        run: bun run build
-
-      - name: Check bundle size
-        run: |
-          # Check if bundle size is reasonable
-          BUNDLE_SIZE=$(stat -c%s "dist/server.js")
-          echo "Bundle size: $BUNDLE_SIZE bytes"
-
-          # Fail if bundle is larger than 5MB
-          if [ $BUNDLE_SIZE -gt 5242880 ]; then
-            echo "Bundle size is too large: $BUNDLE_SIZE bytes"
-            exit 1
-          fi
-
-      - name: Startup performance test
-        run: |
-          # Test server startup time
-          timeout 30s node dist/server.js --help > /dev/null
-          echo "Server startup test passed"

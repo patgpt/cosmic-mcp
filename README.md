@@ -64,6 +64,98 @@ bun start
 
 The server will connect and be ready to receive requests from any MCP-compatible client.
 
+### 4. Using with MCP Clients
+
+#### For VS Code (using Claude Dev extension)
+
+Add this configuration to your VS Code settings or Claude Dev configuration:
+
+```json
+{
+  "mcp": {
+    "servers": {
+      "Cosmic": {
+        "type": "stdio",
+        "command": "npx",
+        "args": ["-y", "cosmic-mcp"],
+        "env": {
+          "COSMIC_BUCKET_SLUG": "your-bucket-slug",
+          "COSMIC_READ_KEY": "your-read-key",
+          "COSMIC_WRITE_KEY": "your-write-key",
+          "DEBUG": "false"
+        }
+      }
+    }
+  }
+}
+```
+
+#### For Cursor
+
+Add this configuration to your `.cursor/mcp.json` file:
+
+```json
+{
+  "mcpServers": {
+    "Cosmic": {
+      "command": "npx",
+      "args": ["-y", "cosmic-mcp"],
+      "env": {
+        "COSMIC_BUCKET_SLUG": "your-bucket-slug",
+        "COSMIC_READ_KEY": "your-read-key",
+        "COSMIC_WRITE_KEY": "your-write-key",
+        "DEBUG": "false"
+      }
+    }
+  }
+}
+```
+
+#### Alternative: Local Development
+
+If you're developing locally or prefer to use the local version:
+
+**For VS Code:**
+```json
+{
+  "mcp": {
+    "servers": {
+      "Cosmic": {
+        "type": "stdio",
+        "command": "node",
+        "args": ["path/to/cosmic-mcp/dist/server.js"],
+        "env": {
+          "COSMIC_BUCKET_SLUG": "your-bucket-slug",
+          "COSMIC_READ_KEY": "your-read-key",
+          "COSMIC_WRITE_KEY": "your-write-key",
+          "DEBUG": "true"
+        }
+      }
+    }
+  }
+}
+```
+
+**For Cursor:**
+```json
+{
+  "mcpServers": {
+    "Cosmic": {
+      "command": "node",
+      "args": ["path/to/cosmic-mcp/dist/server.js"],
+      "env": {
+        "COSMIC_BUCKET_SLUG": "your-bucket-slug",
+        "COSMIC_READ_KEY": "your-read-key",
+        "COSMIC_WRITE_KEY": "your-write-key",
+        "DEBUG": "true"
+      }
+    }
+  }
+}
+```
+
+> **Note:** Replace `your-bucket-slug`, `your-read-key`, and `your-write-key` with your actual Cosmic bucket credentials. You can find these in your Cosmic dashboard under _Bucket > Settings > API Keys_.
+
 ---
 
 ## 🛠️ Available Tools
@@ -102,13 +194,13 @@ bun test
 
 Contributions are welcome! If you have a suggestion or find a bug, please open an issue to discuss it.
 
-1.  **Fork the repository.**
-2.  **Create your feature branch:** `git checkout -b feat/new-amazing-feature`
-3.  **Commit your changes:** `git commit -m 'feat: Add some amazing feature'`
-4.  **Push to the branch:** `git push origin feat/new-amazing-feature`
-5.  **Open a pull request.**
+Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on how to contribute to this project, including:
 
-Please make sure to update tests as appropriate.
+- Development setup and workflow
+- Code style and standards
+- Testing requirements
+- Pull request process
+- Release process
 
 ## 📄 License
 

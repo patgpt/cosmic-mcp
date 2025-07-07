@@ -5,10 +5,10 @@
       "args": ["/Users/wavefunction/cosmic-mcp/dist/server.js"],
       "env": {
         "COSMIC_BUCKET_SLUG": "yellowdog-production",
-        "COSMIC_READ_KEY": "7yjdjD3grIxATCo8VeDjr1sBMn7UsdBXyEejuKDzO2gKnUg6q5",
-        "COSMIC_WRITE_KEY": "TpfP1rYXFzlJNuU4E1RnJf7uoalz7SnOYG3IEdiRnF56j12TVe",
+        "COSMIC_READ_KEY": "your-read-key",
+        "COSMIC_WRITE_KEY": "your-write-key",
         "DEBUG": "true"
       }
     }
   }
-} 
+}

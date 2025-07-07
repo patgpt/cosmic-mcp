@@ -7,7 +7,7 @@ hero:
   text: 'AI-Powered Content Management'
   tagline: 'A robust, production-ready Model Context Protocol server for seamless AI integration with Cosmic headless CMS'
   image:
-    src: /cosmic-mcp/logo.svg
+    src: /logo.svg
     alt: Cosmic MCP Server
   actions:
     - theme: brand

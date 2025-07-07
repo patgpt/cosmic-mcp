@@ -67,6 +67,6 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/patgpt/cosmic-mcp' },
     ],
 
-    logo: '/cosmic-mcp/logo.svg',
+    logo: '/logo.svg',
   },
 });

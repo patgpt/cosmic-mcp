@@ -18,6 +18,9 @@ export default [
       'LICENSE',
       'README.md',
       '*.md',
+      'docs/.vitepress/cache/',
+      'docs/.vitepress/dist/',
+      'integration-test.js',
     ],
   },
   {

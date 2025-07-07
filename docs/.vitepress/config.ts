@@ -6,6 +6,31 @@ export default defineConfig({
   description:
     'A robust, production-ready Model Context Protocol (MCP) server for interacting with the Cosmic headless CMS',
   base: '/cosmic-mcp/',
+  head: [
+    ['link', { rel: 'icon', href: '/cosmic-mcp/logo.svg' }],
+    ['meta', { name: 'theme-color', content: '#667eea' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:locale', content: 'en' }],
+    [
+      'meta',
+      {
+        property: 'og:title',
+        content: 'Cosmic MCP Server | AI-Powered Content Management',
+      },
+    ],
+    ['meta', { property: 'og:site_name', content: 'Cosmic MCP Server' }],
+    [
+      'meta',
+      {
+        property: 'og:image',
+        content: 'https://patgpt.github.io/cosmic-mcp/logo.svg',
+      },
+    ],
+    [
+      'meta',
+      { property: 'og:url', content: 'https://patgpt.github.io/cosmic-mcp/' },
+    ],
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -41,5 +66,7 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/patgpt/cosmic-mcp' },
     ],
+
+    logo: '/logo.svg',
   },
 });
